@@ -26,6 +26,7 @@
 		"browserify": "^4.2.0",
 		"karma": "^0.12.16",
 		"karma-browserifast": "^0.6.1",
-		"karma-jasmine": "^0.1.5"
+		"karma-jasmine": "^0.1.5",
+		"services": "git+https://edbdo.visualstudio.com/DefaultCollection/BDO%20Labs/_git/Services"
 	}
 }
