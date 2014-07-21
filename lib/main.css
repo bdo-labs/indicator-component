@@ -1,0 +1,140 @@
+/* line 3, ../node_modules/custom-elements/lib/sass/bdo-progress.scss */
+.bdo-progress {
+  position: relative;
+  padding: 5px 0;
+}
+/* line 8, ../node_modules/custom-elements/lib/sass/bdo-progress.scss */
+.bdo-progress .indicator {
+  position: absolute;
+  top: 7px;
+  width: 12px;
+  margin: 0 0 0 -4px;
+  text-align: center;
+  font-size: 10px;
+  color: #636363;
+  text-shadow: 0 -2px white;
+}
+/* line 25, ../node_modules/custom-elements/lib/sass/bdo-progress.scss */
+.bdo-progress .bar {
+  background: #969696;
+  width: 100%;
+  height: 8px;
+  clear: both;
+}
+/* line 32, ../node_modules/custom-elements/lib/sass/bdo-progress.scss */
+.bdo-progress .bar > div {
+  height: 100%;
+  width: 0%;
+}
+/* line 37, ../node_modules/custom-elements/lib/sass/bdo-progress.scss */
+.bdo-progress .bar .high {
+  background: #c9c9c9;
+  float: right;
+}
+/* line 42, ../node_modules/custom-elements/lib/sass/bdo-progress.scss */
+.bdo-progress .bar .low {
+  background: #636363;
+}
+/* line 48, ../node_modules/custom-elements/lib/sass/bdo-progress.scss */
+.bdo-progress .bar.high .high {
+  background: #708e50;
+}
+/* line 52, ../node_modules/custom-elements/lib/sass/bdo-progress.scss */
+.bdo-progress .bar.medium {
+  background: #d29628;
+}
+/* line 56, ../node_modules/custom-elements/lib/sass/bdo-progress.scss */
+.bdo-progress .bar.low .low {
+  background: #ac4139;
+}
+
+/* line 2, ../node_modules/custom-elements/lib/sass/bdo-switch.scss */
+.bdo-switch {
+  display: inline-block;
+  position: relative;
+  height: 1.2em;
+  width: 5em;
+  border: 1px solid #969696;
+  color: #969696;
+  background: #636363;
+  cursor: pointer;
+}
+/* line 18, ../node_modules/custom-elements/lib/sass/bdo-switch.scss */
+.bdo-switch span {
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  margin: 0;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  background: white;
+  border-right: 1px solid #969696;
+  transition: 0.2s ease-out;
+}
+/* line 37, ../node_modules/custom-elements/lib/sass/bdo-switch.scss */
+.bdo-switch.off span {
+  left: 50%;
+  border-right: none;
+  border-left: 1px solid #969696;
+}
+
+/* line 6, sass/main.scss */
+.indicator-module {
+  overflow: hidden;
+}
+/* line 9, sass/main.scss */
+.indicator-module .info-panel {
+  position: relative;
+}
+/* line 12, sass/main.scss */
+.indicator-module .info-panel > * {
+  vertical-align: top;
+  margin: 0;
+  display: inline-block;
+  max-width: 350px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+/* line 22, sass/main.scss */
+.indicator-module .info-panel > div:last-child {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: auto;
+}
+/* line 33, sass/main.scss */
+.indicator-module dt, .indicator-module .bdo-progress {
+  width: 200px;
+  font-weight: normal;
+  clear: left;
+  margin-right: 10px;
+}
+/* line 40, sass/main.scss */
+.indicator-module dd, .indicator-module dt, .indicator-module .bdo-progress {
+  float: left;
+}
+/* line 44, sass/main.scss */
+.indicator-module dd, .indicator-module .info-panel > div > span {
+  display: inline-block;
+  width: 50px;
+  text-align: right;
+  margin-left: 0;
+}
+/* line 51, sass/main.scss */
+.indicator-module dl {
+  overflow: hidden;
+  margin: 0;
+}
+/* line 59, sass/main.scss */
+.indicator-module .bdo-switch {
+  background: #34495e;
+}
+/* line 63, sass/main.scss */
+.indicator-module .visual {
+  clear: both;
+  height: 350px;
+  border: 1px solid gray;
+}

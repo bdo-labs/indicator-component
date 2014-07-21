@@ -1,0 +1,71 @@
+﻿@import "../../node_modules/styles/lib/sass/_variables-and-mixins.scss";
+@import "../../node_modules/custom-elements/lib/sass/bdo-progress.scss";
+@import "../../node_modules/custom-elements/lib/sass/bdo-switch.scss";
+
+
+.indicator-module {
+	overflow: hidden; // Prevent collapse
+
+	.info-panel {
+		position: relative;
+
+		> * {
+			vertical-align: top;
+			margin: 0;
+			display: inline-block;
+			max-width: 350px;
+			margin-right: 20px;
+			margin-bottom: 10px;
+		}
+
+		// "Accumulated" switch
+		> div:last-child {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: auto;
+		}
+
+	}
+
+
+	// Middle panel
+	dt, .bdo-progress {
+		width: 200px;
+		font-weight: normal;
+		clear: left;
+		margin-right: 10px;
+	}
+
+	dd, dt, .bdo-progress {
+		float: left;
+	}
+
+	dd, .info-panel > div > span {
+		display: inline-block;
+		width: 50px;
+		text-align: right;
+		margin-left: 0;
+	}
+
+	dl {
+		// Avoid collapse
+		overflow: hidden;
+		margin: 0;
+	}
+
+
+	// Custom switch colors
+	.bdo-switch {
+		background: $strategi-color;
+	}
+
+	.visual {
+		clear: both;
+
+		// While we're waiting for a graph framework
+		height: 350px;
+		border: 1px solid gray;
+	}
+}
+

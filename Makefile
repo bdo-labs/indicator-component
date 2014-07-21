@@ -28,7 +28,9 @@ TESTS:=$(shell find lib -name '*.test.js')
 
 build: node_modules $(SRC)
 	mkdir -p $@
+	compass compile
 	atomify
+	cp index.html $@/
 	@echo ""
 	@echo "    indicator was built!"
 	@echo ""
@@ -42,5 +44,5 @@ test: build
 clean:
 	rm -fr build
 
-.PHONY: clean test
+.PHONY: clean test build
 
