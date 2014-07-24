@@ -18,7 +18,7 @@ REPORTER?=spec
 # Sources
 #
 
-SRC:=$(shell find -E lib -regex '/^.*(html|js|json|css)$$/')
+SRC:=$(wildcard lib/*) index.html
 TESTS:=$(shell find lib -name '*.test.js')
 
 
@@ -29,6 +29,7 @@ TESTS:=$(shell find lib -name '*.test.js')
 build: node_modules $(SRC)
 	mkdir -p $@
 	atomify
+	cp index.html $@/
 	@echo ""
 	@echo "    indicator was built!"
 	@echo ""

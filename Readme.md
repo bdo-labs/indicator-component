@@ -1,13 +1,13 @@
 
-indicator
+indicator view
 ============
 
-The indicator component
+The indicator view
 
 
 ## Installation
 
-    $ git clone https://github.com/bdo-labs/indicator.git
+    $ git clone https://github.com/bdo-labs/indicator-view.git
     $ make -s
 
 
@@ -19,7 +19,7 @@ The indicator component
 ## API
 
 ```Javascript
-    var indicator = require('indicator');
+    var indicator = require('indicator-view');
 ```
 
 

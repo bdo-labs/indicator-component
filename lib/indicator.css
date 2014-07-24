@@ -1,0 +1,57 @@
+/* line 4, sass/indicator.scss */
+.indicator-module {
+  overflow: hidden;
+}
+/* line 7, sass/indicator.scss */
+.indicator-module .info-panel {
+  position: relative;
+}
+/* line 10, sass/indicator.scss */
+.indicator-module .info-panel > * {
+  vertical-align: top;
+  margin: 0;
+  display: inline-block;
+  max-width: 350px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+/* line 20, sass/indicator.scss */
+.indicator-module .info-panel > div:last-child {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: auto;
+}
+/* line 31, sass/indicator.scss */
+.indicator-module dt, .indicator-module .bdo-progress {
+  width: 200px;
+  font-weight: normal;
+  clear: left;
+  margin-right: 10px;
+}
+/* line 38, sass/indicator.scss */
+.indicator-module dd, .indicator-module dt, .indicator-module .bdo-progress {
+  float: left;
+}
+/* line 42, sass/indicator.scss */
+.indicator-module dd, .indicator-module .info-panel > div > span {
+  display: inline-block;
+  width: 50px;
+  text-align: right;
+  margin-left: 0;
+}
+/* line 49, sass/indicator.scss */
+.indicator-module dl {
+  overflow: hidden;
+  margin: 0;
+}
+/* line 57, sass/indicator.scss */
+.indicator-module .bdo-switch {
+  background: #34495e;
+}
+/* line 61, sass/indicator.scss */
+.indicator-module .visual {
+  clear: both;
+  height: 350px;
+  border: 1px solid gray;
+}

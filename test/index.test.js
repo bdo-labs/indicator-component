@@ -9,7 +9,7 @@ describe('indicator', function(){
 	}
 
 
-	beforeEach(module('indicator'));
+	beforeEach(module('indicatorView'));
 
 	var el,
 			scope,
@@ -26,7 +26,7 @@ describe('indicator', function(){
 
 
 	function compileDirective(tpl){
-		if (!tpl) tpl = '<div indicator-module></div>';
+		if (!tpl) tpl = '<div indicator-view></div>';
 
 		inject(function ($compile) {
 			el = $compile(tpl)(scope)[0];
@@ -35,13 +35,9 @@ describe('indicator', function(){
 	}
 
 
-	describe('initialisation', function () {
-		beforeEach(function () {
-			compileDirective();
-		});
 
-		it('child should have class indicator-module', function () {
-			expect(el.firstElementChild.classList.contains('indicator-module')).toBe(true);
-		});
+	it('child should have a child', function () {
+		compileDirective();
+		expect(el.firstElementChild).toBeTruthy();
 	});
 });

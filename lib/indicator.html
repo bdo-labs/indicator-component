@@ -1,42 +1,49 @@
-﻿<section class="interactive-box indicator-module">
+﻿<section class="primary-box indicator-module">
 
 	<h1>{{indicator.name}}</h1>
 
-	<div class="dropdown">
-		<a data-toggle="dropdown" class="dropdown-toggle" href="#">{{state.visibleMeasurement.date | date : 'MMMM yyyy'}}</a>
-		<ul class="dropdown-menu">
-			<li ng-repeat="o in (indicator.measurements | orderBy: '-date')"
-				ng-click="state.visibleMeasurement = o">
-				{{o.date |  date : 'MMMM yyyy'}}
-			</li>
-		</ul>
+	<div class="info-panel">
 
-	</div>
+		<p class="descriptive-text">
+			{{indicator.description}}.
+			Oppdateres {{indicator.frequency | timeInterval}}.
+		</p>
 
-	<p>{{indicator.description}}. Oppdateres {{indicator.updateInterval | timeInterval}}.</p>
+		<div>
 
-	<div class="status">
+			<dl>
+				<dt class="descriptive-text">
+					Mål for {{state.visibleGoal.period | date : 'MMMM yyyy'}}:
+				</dt>
+				<dd>
+					{{state.visibleGoal.value}}{{indicator.unit}}
+				</dd>
 
-		<dl>
-			<dt>Mål for {{state.visibleGoal.date | date : 'MMMM yyyy'}}:</dt>
-			<dd>{{state.visibleGoal.value}},-</dd>
+				<dt class="descriptive-text">
+					Status ved
+					{{state.selectedMeasurement.period | date : 'dd.MM.yy'}}:
+				</dt>
+				<dd>
+					{{state.selectedMeasurement.value | separatedNumber}}{{indicator.unit}}
+				</dd>
+			</dl>
 
-			<dt>Status ved
-				{{state.visibleMeasurement.date | date : 'dd.MM.yy'}}:</dt>
-			<dd>{{state.visibleMeasurement.value}},-</dd>
-		</dl>
+			<div class="bdo-progress"
+					bdo-progress="state.selectedMeasurement.value"
+					bdo-progress-low="indicator.thresholdLow"
+					bdo-progress-high="indicator.thresholdHigh"
+					bdo-progress-max="indicator.thresholdMax">
+			</div>
+			<span>{{state.visibleGoal.value | separatedNumber}}{{indicator.unit}}</span>
 
-		<span>{{state.visibleGoal.value}},-</span>
-		<div class="bdo-progress"
-				bdo-progress="state.visibleMeasurement.value"
-				bdo-progress-low="indicator.thresholdLow"
-				bdo-progress-high="indicator.thresholdHigh"
-				bdo-progress-max="indicator.thresholdMax">
+		</div>
+
+		<div class="descriptive-text">Akkumulert<br>
+			<div bdo-switch="state.showAccumulated"></div>
 		</div>
 
 	</div>
 
-	<button ng-click="registerValue()">Rapporter måloppnåelse</button>
-	<highchart class="visual" config="highChartsConfig"></highchart>
+	<div class="visual">Placeholder</div>
 
 </section>
