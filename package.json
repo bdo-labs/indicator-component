@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "The indicator view",
   "main": "lib/index.js",
+  "style": "lib/main.css",
   "repository": "git://github.com/bdo-labs/indicator-view.git",
   "license": "MIT",
   "scripts": {
