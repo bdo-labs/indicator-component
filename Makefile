@@ -18,7 +18,7 @@ REPORTER?=spec
 # Sources
 #
 
-SRC:=$(shell find -E lib -regex '/^.*(html|js|json|css)$$/')
+SRC:=$(wildcard lib/*) index.html
 TESTS:=$(shell find lib -name '*.test.js')
 
 
@@ -28,7 +28,6 @@ TESTS:=$(shell find lib -name '*.test.js')
 
 build: node_modules $(SRC)
 	mkdir -p $@
-	compass compile
 	atomify
 	cp index.html $@/
 	@echo ""
@@ -44,5 +43,5 @@ test: build
 clean:
 	rm -fr build
 
-.PHONY: clean test build
+.PHONY: clean test
 

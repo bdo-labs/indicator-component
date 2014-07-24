@@ -4,21 +4,32 @@
 
 	<div class="info-panel">
 
-		<p class="descriptive-text">{{indicator.description}}. Oppdateres {{indicator.frequency | timeInterval}}.</p>
+		<p class="descriptive-text">
+			{{indicator.description}}.
+			Oppdateres {{indicator.frequency | timeInterval}}.
+		</p>
 
 		<div>
 
 			<dl>
-				<dt class="descriptive-text">Mål for {{state.visibleGoal.period | date : 'MMMM yyyy'}}:</dt>
-				<dd>{{state.visibleGoal.value}}{{indicator.unit}}</dd>
+				<dt class="descriptive-text">
+					Mål for {{state.visibleGoal.period | date : 'MMMM yyyy'}}:
+				</dt>
+				<dd>
+					{{state.visibleGoal.value}}{{indicator.unit}}
+				</dd>
 
-				<dt class="descriptive-text">Status ved
-					{{state.visibleMeasurement.period | date : 'dd.MM.yy'}}:</dt>
-					<dd>{{state.visibleMeasurement.value | separatedNumber}}{{indicator.unit}}</dd>
+				<dt class="descriptive-text">
+					Status ved
+					{{state.selectedMeasurement.period | date : 'dd.MM.yy'}}:
+				</dt>
+				<dd>
+					{{state.selectedMeasurement.value | separatedNumber}}{{indicator.unit}}
+				</dd>
 			</dl>
 
 			<div class="bdo-progress"
-					bdo-progress="state.visibleMeasurement.value"
+					bdo-progress="state.selectedMeasurement.value"
 					bdo-progress-low="indicator.thresholdLow"
 					bdo-progress-high="indicator.thresholdHigh"
 					bdo-progress-max="indicator.thresholdMax">

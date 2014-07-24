@@ -1,9 +1,9 @@
 {
-  "name": "indicator",
+  "name": "indicator-view",
   "version": "0.0.0",
-  "description": "The indicator component",
+  "description": "The indicator view",
   "main": "lib/index.js",
-  "repository": "git://github.com/bdo-labs/indicator.git",
+  "repository": "git://github.com/bdo-labs/indicator-view.git",
   "license": "MIT",
   "scripts": {
     "test": "karma start"
