@@ -38,7 +38,7 @@ node_modules: package.json
 	npm install
 
 test: build
-	karma start	
+	node_modules/karma/bin/karma start
 
 clean:
 	rm -fr build
