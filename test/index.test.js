@@ -13,8 +13,7 @@ describe('indicator', function(){
 
 	var el,
 			compiled,
-			scope,
-			httpBackend;
+			scope;
 
 	beforeEach(module(function ($provide) {
 		$provide.value('indicatorService', MockService);
@@ -26,10 +25,10 @@ describe('indicator', function(){
 	}));
 
 
-	function compileDirective(tpl){
+	function compileDirective(tpl, date){
 		if (!tpl) tpl = '<div indicator-view indicator-id="1" date="date"></div>';
 
-		scope.date = new Date(2014, 6, 1);
+		scope.date = date ? new Date(date) : new Date(2014, 6, 1);
 		inject(function ($compile) {
 			el = $compile(tpl)(scope)[0];
 		});
@@ -37,6 +36,10 @@ describe('indicator', function(){
 		scope.$digest();
 	}
 
+	it('should find previous measurement if next does not exist', function () {
+		compileDirective(null, '2014-09-02');
+		expect(compiled.isolateScope().state.selectedMeasurement).toBe(MockService.data.measurements[1]);
+	});
 
 	beforeEach(function () {
 		compileDirective();
