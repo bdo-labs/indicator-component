@@ -6,6 +6,19 @@ describe('indicator', function(){
 		},
 		get: function () {
 			return this.data;
+		},
+		aggregatePeriodMeasurement: function () {
+			return {};
+		},
+
+		aggregatePeriodGoal: function () {
+			return {};
+		},
+		aggregateGoals: function () {
+			return [];
+		},
+		aggregateMeasurements: function () {
+			return [];
 		}
 	};
 
@@ -36,11 +49,6 @@ describe('indicator', function(){
 		scope.$digest();
 	}
 
-	it('should find previous measurement if next does not exist', function () {
-		compileDirective(null, '2014-09-02');
-		expect(compiled.isolateScope().state.selectedMeasurement).toBe(MockService.data.measurements[1]);
-	});
-
 	beforeEach(function () {
 		compileDirective();
 	});
@@ -58,18 +66,11 @@ describe('indicator', function(){
 		expect(compiled.isolateScope().state.visibleGoal).toBeTruthy();
 	});
 
-	describe('watching for added elements to goals', function () {
-
-		it('should have goals in scope', function () {
-			expect(compiled.isolateScope().indicator.goals).toBeDefined();
-		});
-
-		it('should change goal when a new is added', function () {
-			var newGoal = {value: 100, period: new Date('2014-07-01')};
-			MockService.data.goals.unshift(newGoal);
-			compiled.isolateScope().$digest();
-			expect(compiled.isolateScope().state.selectedMeasurement).toBe(MockService.data.measurements[0]);
-			expect(compiled.isolateScope().state.visibleGoal).toBe(newGoal);
-		});
+	it('should add graph data to scope', function () {
+		var s = compiled.isolateScope();
+		expect(s.chartData).toBeTruthy();
+		expect(s.chartGoalData).toBeTruthy();
 	});
+	
+
 });

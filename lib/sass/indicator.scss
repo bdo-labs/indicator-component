@@ -59,11 +59,60 @@
 	}
 
 	.visual {
-		clear: both;
-
-		// While we're waiting for a graph framework
 		height: 350px;
-		border: 1px solid gray;
-	}
+		cursor: grab;
 
+		&.dragging {
+			cursor: grabbing;
+		}
+
+		.good {
+			stroke: $good-color;
+		}
+		.danger {
+			stroke: $danger-color;
+		}
+		.warning {
+			stroke: $warning-color;
+		}
+
+		circle {
+			cursor: pointer;
+			stroke-width: 4px;
+			fill: white;
+		}
+
+		.measurement-area {
+			fill: $strategi-color;
+			opacity: 0.8;
+		}
+
+		.axis path {
+			display: none;
+		}
+
+		.goal-line {
+			fill: none;
+			stroke: $strategi-color;
+			stroke-dasharray: 5,5;
+			stroke-width: 2px;
+		}
+
+		.axis.y line {
+			stroke: #f3f3f3;
+			stroke-width: 2px;
+		}
+
+		.axis.x {
+			line {
+				display: none;
+			}
+
+			text {
+				//TODO: A variable is on it's way!
+				font-weight: 600;
+			}
+		}
+
+	}
 }

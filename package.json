@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "custom-elements": "git://github.com/bdo-labs/custom-elements",
+    "d3-charts": "git://github.com/bdo-labs/d3-charts.git",
     "filters": "git://github.com/bdo-labs/filters.git",
     "services": "git+https://edbdo.visualstudio.com/DefaultCollection/BDO%20Labs/_git/Services"
   }
