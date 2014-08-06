@@ -51,7 +51,57 @@
 }
 /* line 61, sass/indicator.scss */
 .indicator-module .visual {
-  clear: both;
   height: 350px;
-  border: 1px solid gray;
+  cursor: grab;
+}
+/* line 65, sass/indicator.scss */
+.indicator-module .visual.dragging {
+  cursor: grabbing;
+}
+/* line 69, sass/indicator.scss */
+.indicator-module .visual .good {
+  stroke: #708e50;
+}
+/* line 72, sass/indicator.scss */
+.indicator-module .visual .danger {
+  stroke: #ac4139;
+}
+/* line 75, sass/indicator.scss */
+.indicator-module .visual .warning {
+  stroke: #d29628;
+}
+/* line 79, sass/indicator.scss */
+.indicator-module .visual circle {
+  cursor: pointer;
+  stroke-width: 4px;
+  fill: white;
+}
+/* line 85, sass/indicator.scss */
+.indicator-module .visual .measurement-area {
+  fill: #34495e;
+  opacity: 0.8;
+}
+/* line 90, sass/indicator.scss */
+.indicator-module .visual .axis path {
+  display: none;
+}
+/* line 94, sass/indicator.scss */
+.indicator-module .visual .goal-line {
+  fill: none;
+  stroke: #34495e;
+  stroke-dasharray: 5,5;
+  stroke-width: 2px;
+}
+/* line 101, sass/indicator.scss */
+.indicator-module .visual .axis.y line {
+  stroke: #f3f3f3;
+  stroke-width: 2px;
+}
+/* line 107, sass/indicator.scss */
+.indicator-module .visual .axis.x line {
+  display: none;
+}
+/* line 111, sass/indicator.scss */
+.indicator-module .visual .axis.x text {
+  font-weight: 600;
 }
