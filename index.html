@@ -7,10 +7,28 @@
 		<meta charset="utf-8">
 		<script src="build.js"></script>
 		<link rel="stylesheet" href="bundle.css">
+		<script>
+			angular.module('indicatorView').controller('testCtrl',
+				function ($scope, indicatorService) {
+					var indicators = $scope.indicators = indicatorService.query();
+
+					indicators.$promise.then(function () {
+						if (indicators.length) {
+							$scope.ind = indicators[0];
+						}
+					});
+				}
+			);
+
+
+		</script>
 	</head>
 
-	<body ng-app="indicatorView">
-		<div indicator-view indicator-id="2"></div>
+	<body ng-app="indicatorView" ng-controller="testCtrl">
+		<select ng-options="i.name for i in indicators"
+			ng-model="ind"></select>
+		<div indicator-view indicator-id="{{ind.id}}"></div>
+		<div indicator-view indicator-id="{{ind.slug}}"></div>
 	</body>
 
 </html>
