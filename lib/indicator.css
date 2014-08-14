@@ -36,7 +36,7 @@
 /* line 42, sass/indicator.scss */
 .indicator-module dd, .indicator-module .info-panel > div > span {
   display: inline-block;
-  width: 50px;
+  width: 80px;
   text-align: right;
   margin-left: 0;
 }
@@ -108,5 +108,5 @@
 /* line 118, sass/indicator.scss */
 .indicator-module .no-data {
   text-align: center;
-  padding: 175px 0;
+  padding: 10% 0;
 }

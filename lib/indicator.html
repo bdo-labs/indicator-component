@@ -9,21 +9,21 @@
 			Oppdateres {{indicator.frequency | timeInterval}}.
 		</p>
 
-		<div ng-if="state.visibleGoal || state.selectedMeasurement">
+		<div>
 
 			<dl>
-				<dt class="descriptive-text">
+				<dt class="descriptive-text" ng-if="state.visibleGoal">
 					Mål for {{state.visibleGoal.period | date : 'MMMM yyyy'}}:
 				</dt>
-				<dd>
+				<dd ng-if="state.visibleGoal">
 					{{state.visibleGoal.value | separatedNumber}}{{indicator.unit}}
 				</dd>
 
-				<dt class="descriptive-text">
+				<dt class="descriptive-text" ng-if="state.selectedMeasurement">
 					Status ved
 					{{state.selectedMeasurement.period | date : 'dd.MM.yy'}}:
 				</dt>
-				<dd>
+				<dd ng-if="state.selectedMeasurement">
 					{{state.selectedMeasurement.value | separatedNumber}}{{indicator.unit}}
 				</dd>
 			</dl>
@@ -32,9 +32,12 @@
 					bdo-progress="state.selectedMeasurement.value"
 					bdo-progress-low="indicator.thresholdLow"
 					bdo-progress-high="indicator.thresholdHigh"
-					bdo-progress-max="indicator.thresholdMax">
+					bdo-progress-max="indicator.thresholdMax"
+					ng-if="state.selectedMeasurement">
 			</div>
-			<span>{{state.visibleGoal.value | separatedNumber}}{{indicator.unit}}</span>
+			<span ng-if="state.selectedMeasurement">
+				{{state.visibleGoal.value | separatedNumber}}{{indicator.unit}}
+			</span>
 
 		</div>
 
