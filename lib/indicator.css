@@ -16,7 +16,7 @@
   margin-bottom: 10px;
 }
 /* line 20, sass/indicator.scss */
-.indicator-module .info-panel > div:last-child {
+.indicator-module .info-panel > div:nth-child(3) {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -104,4 +104,9 @@
 /* line 111, sass/indicator.scss */
 .indicator-module .visual .axis.x text {
   font-weight: 600;
+}
+/* line 118, sass/indicator.scss */
+.indicator-module .no-data {
+  text-align: center;
+  padding: 175px 0;
 }

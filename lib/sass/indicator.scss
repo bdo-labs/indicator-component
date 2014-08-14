@@ -17,7 +17,7 @@
 		}
 
 		// "Accumulated" switch
-		> div:last-child {
+		> div:nth-child(3) {
 			position: absolute;
 			right: 0;
 			bottom: 0;
@@ -109,10 +109,14 @@
 			}
 
 			text {
-				//TODO: A variable is on it's way!
-				font-weight: 600;
+				font-weight: $semi-bold;
 			}
 		}
 
+	}
+
+	.no-data {
+		text-align: center;
+		padding: 20% 0;
 	}
 }

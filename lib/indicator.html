@@ -9,7 +9,7 @@
 			Oppdateres {{indicator.frequency | timeInterval}}.
 		</p>
 
-		<div>
+		<div ng-if="state.visibleGoal || state.selectedMeasurement">
 
 			<dl>
 				<dt class="descriptive-text">
@@ -38,13 +38,19 @@
 
 		</div>
 
-		<div class="descriptive-text">Akkumulert<br>
+		<div class="descriptive-text" ng-if="anyChartData">Akkumulert<br>
 			<div bdo-switch="state.showAccumulated"></div>
 		</div>
 
 	</div>
 
-	<div class="visual" bdo-d3-line="chartData"
+	<!-- Chart -->
+	<div ng-if="anyChartData" class="visual"
+		bdo-d3-line="chartData"
 		bdo-d3-line-goals="chartGoalData"></div>
+
+	<div ng-if="!anyChartData" class="no-data descriptive-text">
+		Ingen data å vise
+	</div>
 
 </section>
