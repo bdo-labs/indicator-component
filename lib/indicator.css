@@ -2,6 +2,9 @@
 .indicator-module {
   overflow: hidden;
 }
+.indicator-module h1 {
+  text-align: center;
+}
 /* line 7, sass/indicator.scss */
 .indicator-module .info-panel {
   position: relative;
@@ -12,8 +15,8 @@
   margin: 0;
   display: inline-block;
   max-width: 350px;
-  margin-right: 20px;
-  margin-bottom: 10px;
+  min-width: 240px;
+  margin-bottom: 1em;
 }
 /* line 20, sass/indicator.scss */
 .indicator-module .info-panel > div:nth-child(3) {
@@ -45,10 +48,6 @@
   overflow: hidden;
   margin: 0;
 }
-/* line 57, sass/indicator.scss */
-.indicator-module .bdo-switch {
-  background: #34495e;
-}
 /* line 61, sass/indicator.scss */
 .indicator-module .visual {
   height: 350px;
@@ -58,22 +57,10 @@
 .indicator-module .visual.dragging {
   cursor: grabbing;
 }
-/* line 69, sass/indicator.scss */
-.indicator-module .visual .good {
-  stroke: #708e50;
-}
-/* line 72, sass/indicator.scss */
-.indicator-module .visual .danger {
-  stroke: #ac4139;
-}
-/* line 75, sass/indicator.scss */
-.indicator-module .visual .warning {
-  stroke: #d29628;
-}
 /* line 79, sass/indicator.scss */
 .indicator-module .visual circle {
   cursor: pointer;
-  stroke-width: 4px;
+  stroke-width: 2px;
   fill: white;
 }
 /* line 85, sass/indicator.scss */
