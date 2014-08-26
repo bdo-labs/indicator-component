@@ -1,34 +1,29 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Indicator view test page</title>
+    <script src="build.js"></script>
+    <link rel="stylesheet" href="bundle.css">
+    <script>
+      angular.module('indicatorView').controller('testCtrl',
+        function ($scope, indicatorService) {
+          var indicators = $scope.indicators = indicatorService.query();
 
-	<head>
-		<title>Indicator view test page</title>
-		<meta charset="utf-8">
-		<script src="build.js"></script>
-		<link rel="stylesheet" href="bundle.css">
-		<script>
-			angular.module('indicatorView').controller('testCtrl',
-				function ($scope, indicatorService) {
-					var indicators = $scope.indicators = indicatorService.query();
+          indicators.$promise.then(function () {
+            if (indicators.length) {
+              $scope.ind = indicators[0];
+            }
+          });
+        }
+      );
+    </script>
+  </head>
 
-					indicators.$promise.then(function () {
-						if (indicators.length) {
-							$scope.ind = indicators[0];
-						}
-					});
-				}
-			);
-
-
-		</script>
-	</head>
-
-	<body ng-app="indicatorView" ng-controller="testCtrl">
-		<select ng-options="i.name for i in indicators"
-			ng-model="ind"></select>
-		<div indicator-view indicator-id="{{ind.id}}"></div>
-		<div indicator-view indicator-id="{{ind.slug}}"></div>
-	</body>
-
+  <body ng-app="indicatorView" ng-controller="testCtrl">
+    <select ng-options="i.name for i in indicators"
+      ng-model="ind"></select>
+    <div indicator-view indicator-id="{{ind.id}}"></div>
+    <div indicator-view indicator-id="{{ind.slug}}"></div>
+  </body>
 </html>

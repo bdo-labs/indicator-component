@@ -7,28 +7,20 @@ The indicator view
 
 ## Installation
 
-    $ git clone https://github.com/bdo-labs/indicator-view.git
-    $ make -s
+    $ npm install bdo-labs/indicator-view
+    $ npm run build
 
 
 ## Running tests
 
-    $ make -s test
-
-
-## API
-
-```Javascript
-    var indicator = require('indicator-view');
-```
-
+    $ npm test
 
 
 ## License
 
 The MIT License
 
-Copyright &copy; 2014, BDO-labs &lt;bdo-labs@bdo.no&gt;
+Copyright &copy; 2014, BDO-labs &lt;labs@bdo.no&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the "Software"),
